@@ -1,1 +1,99 @@
-/* Add your own styles */
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(243, 251, 253);
+}
+header{
+    display: flex;
+    background-color: rgb(6, 159, 255);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 10px
+}
+img{
+    width: 70px;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+#controls{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    align-items: center;
+    width: 600px;
+    padding: 10px;
+}
+
+label{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+input{
+    padding: 7px;
+    grid-column: span 2;
+}
+
+button{
+    padding:7px;
+    width: 100%;
+    font-weight: 800;
+    color: white;
+    justify-self: center;
+    cursor: pointer;
+}
+
+#lookup{
+    background-color: blue;
+}
+
+#lookup-cities{
+    background-color: green;
+}
+
+#result{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px;
+}
+
+table{
+    margin: 10px;
+    width: 70%;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+tbody tr:nth-child(odd){
+    background-color: white;
+}
+
+.not-found{
+    color: red;
+    font-size: 20px;
+}
+
+

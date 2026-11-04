@@ -1,16 +1,24 @@
 function handleLookup(){
-    const lookupBtn = document.querySelector('#lookup');
-    lookupBtn.addEventListener('click', (event)=>{
+
+    const countrylookupBtn = document.querySelector('#lookup');
+    const citylookupBtn = document.querySelector('#lookup-cities');
+    const result = document.querySelector('#result');
+    const input = document.querySelector('#country');
+
+    countrylookupBtn.addEventListener('click', (event)=>{
         event.preventDefault();        
-        const input = document.querySelector('#country');
-        const country = input.value;
-        const result = document.querySelector('#result');
-        searchCountry(country, result);
-    })
+        let country = input.value;
+        searchCountry(country, '', result);
+    });
+    citylookupBtn.addEventListener('click', (event)=>{
+        event.preventDefault();        
+        let country = input.value;
+        searchCountry(country, 'cities', result);
+    });
 }
 
-function searchCountry(country, container){
-    const url = `world.php?country=${encodeURIComponent(country)}`;
+function searchCountry(country, lookup, container){
+    const url = `world.php?country=${encodeURIComponent(country)}&lookup=${encodeURIComponent(lookup)}`;
     fetch(url)
         .then(res => {
             if (!res.ok){
