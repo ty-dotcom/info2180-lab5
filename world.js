@@ -1,6 +1,7 @@
 function handleLookup(){
     const lookupBtn = document.querySelector('#lookup');
-    lookupBtn.addEventListener('click', (event)=>{        
+    lookupBtn.addEventListener('click', (event)=>{
+        event.preventDefault();        
         const input = document.querySelector('#country');
         const country = input.value;
         const result = document.querySelector('#result');
@@ -18,10 +19,10 @@ function searchCountry(country, container){
             return res.text();
         })
         .then(data => {
-            container.innerHTML += data;
+            container.innerHTML = data;
         })
         .catch(() => {
-            container.innerHTML += "<h4 class='not-found'> COUNTRY NOT FOUND. <h4>";
+            container.innerHTML = "<h4 class='not-found'> COUNTRY NOT FOUND. <h4>";
         });
 }
 
